@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  .field {
+    background: linear-gradient(45deg, rgb(240, 160, 199), rgb(87, 66, 100));
+  }
+}
+
+.value {
+  font-size: 28px;
+  color: rgb(30, 9, 49);
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(250, 110, 175), rgb(59, 15, 87));
+  display: inline-block;
+  align-items: center;
+  //   flex: 4;
+  padding: 45px 20px;
+  margin: 10px;
+  //   text-align: center;
+}
+
+.label {
+  display: block;
+  padding: 5px 20px;
+  font-size: 12px;
+  color: rgb(30, 9, 49);
+  font-weight: 700;
+  text-align: center;
+}
