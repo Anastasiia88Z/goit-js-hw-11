@@ -1,11 +1,7 @@
 // ======================= Subtask 1 =======================
 const delay = ms => {
-  return new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(ms);
-  }, ms);
- });
-};
+  return Promise.resolve(ms);
+}
 
 const logger = time => console.log(`Resolved after ${time}ms`);
 
@@ -19,13 +15,17 @@ const users = [
   { name: 'Mango', active: true },
   { name: 'Poly', active: false },
   { name: 'Ajax', active: false },
+  
 ];
 
 const toggleUserState = (allUsers, username) => {
-    const updatedUsers = allUsers.map(user =>
+     return new Promise (resolve => {
+
+       const updatedUsers = allUsers.map(user =>
+      
       user.name === username ? { ...user, active: !user.active } : user
-  );
-  return new Promise ((resolve, reject) => {
+  )
+  
   resolve (updatedUsers);
     })
 };
@@ -33,10 +33,6 @@ const toggleUserState = (allUsers, username) => {
 
 toggleUserState(users, 'Mango').then(console.table);
 toggleUserState(users, 'Ajax').then(console.table);
-
-// The function should work like this
-// toggleUserState(users, 'Mango').then(console.table);
-// toggleUserState(users, 'Ajax').then(console.table);
 
 // ======================= Subtask 3 =======================
 const randomIntegerFromInterval = (min, max) => {
